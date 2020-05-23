@@ -23,5 +23,3 @@ politician2.electionResults[4] = 38;
 politician1.electionResults[43] = 11;
 politician2.electionResults[43] = 27;
 
-console.log(politician1.electionResults);
-console.log(politician2.electionResults);
