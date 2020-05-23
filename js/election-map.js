@@ -7,11 +7,11 @@ var createPolitician = function (name) {
 
     politician.voteResults = function () {
         this.totalVotes = 0;
-    
+
         for (var i = 0; i < this.electionResults.length; i++) {
             this.totalVotes = this.totalVotes + this.electionResults[i];
         }
-    
+
     };
 
     return politician;
@@ -38,5 +38,19 @@ politician2.voteResults();
 
 console.log(politician1.totalVotes);
 console.log(politician2.totalVotes);
+
+var winner = "Who's the winner?";
+
+if (politician1.totalVotes > politician2.totalVotes) {
+    winner = politician1.name;
+} 
+else if (politician1.totalVotes < politician2.totalVotes) {
+    winner = politician2.name;
+}
+else {
+    winner = "Draw";
+}
+
+console.log("The winner is " + winner + " !");
 
 
