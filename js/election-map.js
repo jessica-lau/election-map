@@ -5,6 +5,15 @@ var createPolitician = function (name) {
     politician.electionResults = null;
     politician.totalVotes = 0;
 
+    politician.voteResults = function () {
+        this.totalVotes = 0;
+    
+        for (var i = 0; i < this.electionResults.length; i++) {
+            this.totalVotes = this.totalVotes + this.electionResults[i];
+        }
+    
+    };
+
     return politician;
 }
 
@@ -22,4 +31,12 @@ politician2.electionResults[4] = 38;
 
 politician1.electionResults[43] = 11;
 politician2.electionResults[43] = 27;
+
+
+politician1.voteResults();
+politician2.voteResults();
+
+console.log(politician1.totalVotes);
+console.log(politician2.totalVotes);
+
 
