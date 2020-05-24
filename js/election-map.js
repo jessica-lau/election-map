@@ -85,6 +85,17 @@ else {
 console.log("The winner is " + winner + "!");
 
 
+var countryInfoTable = document.getElementById("countryResults");
+var row = countryInfoTable.children[0].children[0];
+
+row.children[0].innerText = politician1.name;
+row.children[1].innerText = politician1.totalVotes;
+row.children[2].innerText = politician2.name;
+row.children[3].innerText = politician2.totalVotes;
+row.children[5].innerText = winner;
+
+
+
 
 
 
