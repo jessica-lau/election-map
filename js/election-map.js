@@ -68,6 +68,32 @@ var setStateResults = function (state) {
         theStates[state].rgbColor = [11, 32, 57];
     }
 
+
+    var stateInfoTable = document.getElementById("stateResults");
+    var header = stateInfoTable.children[0].children[0];
+    var stateName = header.children[0];
+    stateName.innerText = theStates[state].nameFull;
+    var stateAbbrev = header.children[1];
+    stateAbbrev.innerText = theStates[state].nameAbbrev;
+
+    var body = stateInfoTable.children[1];
+    var candidate1 = body.children[0].children[0];
+    candidate1.innerText = politician1.name;
+    var results1 = body.children[0].children[1];
+    results1.innerText = politician1.electionResults[state];
+    var candidate2 = body.children[1].children[0];
+    candidate2.innerText = politician2.name;
+    var results2 = body.children[1].children[1];
+    results2.innerText = politician2.electionResults[state];
+    var winnersName = body.children[2].children[1];
+
+    if (stateWinner === null) {
+        winnersName.innerText = "Draw";
+    }
+    else {
+        winnersName.innerText = stateWinner.name;
+    }
+
 };
 
 var winner = "Who's the winner?";
@@ -93,6 +119,7 @@ row.children[1].innerText = politician1.totalVotes;
 row.children[2].innerText = politician2.name;
 row.children[3].innerText = politician2.totalVotes;
 row.children[5].innerText = winner;
+
 
 
 
